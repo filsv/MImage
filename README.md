@@ -12,7 +12,7 @@ A SwiftUI view that provides morphing blur transitions between SF Symbol variant
 
 1. **Swift Package Manager** (Recommended)  
    In Xcode, go to `File → Add Packages...` and use the repository URL:
-   https://github.com/filsv/MImage.git
+   https://github.com/flsv/MImage.git
    Then select the "MImage" library for your app target.
 
 2. **Add as a Swift Package** in your `Package.swift`:
