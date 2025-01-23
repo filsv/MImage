@@ -29,10 +29,35 @@ import MImage
 2. **Use MImage in your SwiftUI code:**
 ```swift
 struct ContentView: View {
+    // Tracks whether we're using the `.fill` variant
+    @State private var useFilledVariant = false
+    // Tracks whether color tint is enabled
+    @State private var colorEnabled = false
+    
     var body: some View {
-        MImage(systemName: "heart", variant: .fill)
-            .symbolDuration(2.0)  // 2-second transitions
+        VStack(spacing: 20) {
+            // The MImage view
+            MImage(
+                systemName: "heart",
+                variant: useFilledVariant ? .fill : .none
+            )
+            // Set a 2-second blur transition for morphing the symbol variant
+            .symbolDuration(2.0)
+            // Apply or remove a color tint based on `colorEnabled`
+            .foregroundStyle(colorEnabled ? .primary : .secondary)
             .frame(width: 100, height: 100)
+            
+            // Button to toggle between `.none` and `.fill`
+            Button("Toggle Variant") {
+                useFilledVariant.toggle()
+            }
+            
+            // Button to enable/disable the color tint
+            Button(colorEnabled ? "Disable Color" : "Enable Color") {
+                colorEnabled.toggle()
+            }
+        }
+        .padding()
     }
 }
 ```
