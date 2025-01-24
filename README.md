@@ -1,6 +1,12 @@
 # MImage
 
-A SwiftUI view that provides morphing blur transitions between SF Symbol variants.
+A SwiftUI view that provides morphing blur transitions between [SF Symbol variants](https://developer.apple.com/documentation/swiftui/symbolvariants).
+
+## Demo
+
+Check out the smooth morphing and blur transition in action:
+
+![MImage Demo](assets/demo.gif)
 
 ## Features
 
@@ -62,7 +68,7 @@ struct ContentView: View {
 }
 ```
 
-3. **Morphing: Change variant to e.g. .none, .fill, or .circle.**
+3. **Morphing: Change variant to e.g. .none, .fill, or .circle.**<br>
     The blur animation triggers automatically.
 
 ## Example App
@@ -71,7 +77,7 @@ See the Examples/MImageExampleApp folder for a small SwiftUI demo project that s
 
 ## Requirements
 
-• iOS 15+, macOS 11+, watchOS 8+.
+• iOS 15+, macOS 11+, watchOS 8+.<br>
 • Swift 5.5+.
 
 ## Contributing
