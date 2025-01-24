@@ -1,6 +1,6 @@
 # MImage
 
-A SwiftUI view that provides morphing blur transitions between SF Symbol variants. Works on iOS 15+, macOS 11+, and watchOS 8+.
+A SwiftUI view that provides morphing blur transitions between SF Symbol variants.
 
 ## Features
 

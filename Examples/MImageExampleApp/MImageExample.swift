@@ -30,7 +30,10 @@ public struct MImageExample: View {
     // MARK: - Body
     public var body: some View {
         VStack(spacing: 0) {
-            instructionsView
+            VStack {
+                Spacer()
+                instructionsView
+            }
 
             // A TabView to swipe between different SF Symbol names
             TabView(selection: $symbolIndex) {
@@ -60,10 +63,19 @@ public struct MImageExample: View {
             .tabViewStyle(.page(indexDisplayMode: .always))
             #endif
         }
-        // Place color selector at the bottom
         .safeAreaInset(edge: .bottom) {
             VStack(spacing: 0) {
                 Divider()
+                
+                Picker("Select variant", selection: $variant) {
+                    ForEach(variants, id: \.self) { selectedVariant in
+                        Text("\(selectedVariant.name)")
+                    }
+                }
+                .pickerStyle(.segmented)
+                .padding(.horizontal)
+                .padding(.vertical)
+                
                 ColorSelector(color: $tint)
                     .frame(height: 50)
                     .padding(.vertical)
@@ -129,6 +141,26 @@ struct ColorSelector: View {
                     }
                 }
             }
+        }
+    }
+}
+
+// MARK: - Extensions
+extension SymbolVariants {
+    var name: String {
+        switch self {
+            case .fill:
+                return "fill"
+            case .slash:
+                return "slash"
+            case .rectangle:
+                return "rect"
+            case .circle:
+                return "circle"
+            case .square:
+                return "square"
+            default:
+                return "none"
         }
     }
 }
