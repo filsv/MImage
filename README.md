@@ -4,9 +4,9 @@ A SwiftUI view that provides morphing blur transitions between [SF Symbol varian
 
 ## Demo
 
-Check out the smooth morphing and blur transition in action:
+Morphing and blur transition in action:
 
-![MImage Demo](assets/demo.gif)
+<img src="assets/demo.gif" width="300" alt="MImage Demo" />
 
 ## Features
 
